@@ -1,0 +1,15 @@
+version: "3.5"
+
+services:
+
+  manticore:
+    image: manticoresearch/manticore
+    volumes:
+#    - ./manticore/etc:/etc/manticoresearch
+    - ./manticore/data:/var/lib/manticore/data
+    - ./manticore/logs:/var/log/manticore
+    ports:
+    - 127.0.0.1:9306:9306
+    - 127.0.0.1:9308:9308
+    - 127.0.0.1:9312:9312
+    - 127.0.0.1:9315-9325:9315-9325
